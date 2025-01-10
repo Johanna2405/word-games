@@ -1,5 +1,3 @@
-// Rock Paper Scissors
-// Description: Implement a basic Rock Paper Scissors game.
 // Requirements:
 // The program should take the player’s move as an input from process.argv.
 // The program should randomly generate a move for the computer.
