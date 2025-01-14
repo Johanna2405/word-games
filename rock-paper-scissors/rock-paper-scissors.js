@@ -22,39 +22,39 @@ const win = `Your choice: ${userInput} | Computer's choice: ${computerChoice} | 
 const draw = `Your choice: ${userInput} | Computer's choice: ${computerChoice} | Result: It's a draw. Try again!`;
 const loose = `Your choice: ${userInput} | Computer's choice: ${computerChoice} | Result: You loose. Try again!`;
 
-if (userInput === "rock") {
+if (userInput === options[0]) {
   switch (computerChoice) {
-    case "rock":
+    case options[0]:
       console.log(draw);
       return;
-    case "scissors":
+    case options[1]:
       console.log(win);
       return;
-    case "paper":
+    case options[2]:
       console.log(loose);
       return;
   }
-} else if (userInput === "scissors") {
+} else if (userInput === options[1]) {
   switch (computerChoice) {
-    case "rock":
+    case options[0]:
       console.log(loose);
       return;
-    case "scissors":
+    case options[1]:
       console.log(draw);
       return;
-    case "paper":
+    case options[2]:
       console.log(win);
       return;
   }
-} else if (userInput === "paper") {
+} else if (userInput === options[2]) {
   switch (computerChoice) {
-    case "rock":
+    case options[0]:
       console.log(win);
       return;
-    case "scissors":
+    case options[1]:
       console.log(loose);
       return;
-    case "paper":
+    case options[2]:
       console.log(draw);
       return;
   }
