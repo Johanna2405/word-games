@@ -1,92 +1,61 @@
-// Requirements:
-// The program should take the player’s move as an input from process.argv.
-// The program should randomly generate a move for the computer.
-// Determine the winner based on the rules of Rock Paper Scissors.
-// Output the result (win, lose, or draw) to the console.
-// Example:
-// node rockPaperScissors.js rock
-// # Output: You chose rock. Computer chose scissors. You win!
-
 // Get User Input & options
-
 const args = process.argv.slice(2);
-const userInput = args[0];
+const userInput = args[0].toLowerCase();
 const options = ["rock", "scissors", "paper"];
 
 // Random computer choice
-
 const computerChoice = options[Math.floor(Math.random() * options.length)];
 
 // check if the user provided exactly one element
 if (args.length !== 1) {
-  console.error("Please provide exactly one option: rock, paper or scissors.");
+  console.error("Please provide exactly one option: Rock, Paper or Scissors.");
   return;
 }
 
-// check if user input is valid option -> later: check case sensitivity !
-
+// check if user input is valid option
 if (!options.includes(userInput)) {
-  console.log("Please choose between: rock | paper | scissors");
+  console.log("Please choose between: Rock | Paper | Scissors");
 }
+
+// results
+const win = `Your choice: ${userInput} | Computer's choice: ${computerChoice} | Result: You win!`;
+const draw = `Your choice: ${userInput} | Computer's choice: ${computerChoice} | Result: It's a draw. Try again!`;
+const loose = `Your choice: ${userInput} | Computer's choice: ${computerChoice} | Result: You loose. Try again!`;
 
 if (userInput === "rock") {
   switch (computerChoice) {
     case "rock":
-      console.log(
-        "Computer's choice: ",
-        computerChoice,
-        "Result: It is a draw. Try again!"
-      );
+      console.log(draw);
       return;
     case "scissors":
-      console.log("Computer's choice: ", computerChoice, "Result: You win!");
+      console.log(win);
       return;
     case "paper":
-      console.log(
-        "Computer's choice: ",
-        computerChoice,
-        "Result: You loose. Try again!"
-      );
+      console.log(loose);
       return;
   }
 } else if (userInput === "scissors") {
   switch (computerChoice) {
     case "rock":
-      console.log(
-        "Computer's choice: ",
-        computerChoice,
-        "Result: You loose. Try again!"
-      );
+      console.log(loose);
       return;
     case "scissors":
-      console.log(
-        "Computer's choice: ",
-        computerChoice,
-        "Result: It is a draw. Try again!"
-      );
+      console.log(draw);
       return;
     case "paper":
-      console.log("Computer's choice: ", computerChoice, "Result: You win!");
+      console.log(win);
       return;
   }
 } else if (userInput === "paper") {
   switch (computerChoice) {
     case "rock":
-      console.log("Computer's choice: ", computerChoice, "Result: You win!");
+      console.log(win);
       return;
     case "scissors":
-      console.log(
-        "Computer's choice: ",
-        computerChoice,
-        "Result: You loose. Try again!"
-      );
+      console.log(loose);
       return;
     case "paper":
-      console.log(
-        "Computer's choice: ",
-        computerChoice,
-        "Result: It is a draw. Try again!"
-      );
+      console.log(draw);
       return;
   }
 }
