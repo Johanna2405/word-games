@@ -2,7 +2,7 @@
 const args = process.argv.slice(2, 3);
 const inputPhrase = args[0].toLowerCase();
 const inputNumber = args[1];
-const abc = [
+const abcArr = [
   "a",
   "b",
   "c",
@@ -30,3 +30,8 @@ const abc = [
   "y",
   "z",
 ];
+
+// slice inputPhrase in single letters
+// compare letters with abc Array somehow, like do a copy with blanks and get index OR: get letter index from abcArr (any?)
+// calculate new index with inputNumber
+// create output by concatinating string
