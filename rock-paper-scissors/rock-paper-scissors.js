@@ -1,12 +1,12 @@
-// Get User Input & options
+// ret User Input & options
 const args = process.argv.slice(2);
 const userInput = args[0].toLowerCase();
 const options = ["rock", "scissors", "paper"];
 
-// Random computer choice
+// random computer choice
 const computerChoice = options[Math.floor(Math.random() * options.length)];
 
-// check if the user provided exactly one element
+// check if the user provided exactly one argument
 if (args.length !== 1) {
   console.error("Please provide exactly one option: Rock, Paper or Scissors.");
   return;
@@ -18,44 +18,45 @@ if (!options.includes(userInput)) {
 }
 
 // results
-const win = `Your choice: ${userInput} | Computer's choice: ${computerChoice} | Result: You win!`;
-const draw = `Your choice: ${userInput} | Computer's choice: ${computerChoice} | Result: It's a draw. Try again!`;
-const loose = `Your choice: ${userInput} | Computer's choice: ${computerChoice} | Result: You loose. Try again!`;
+const result = `Your choice: ${userInput} | Computer's choice: ${computerChoice} | `;
+const win = `Result: You win!`;
+const draw = `Result: It's a draw. Try again!`;
+const loose = `Result: You loose. Try again!`;
 
 if (userInput === options[0]) {
   switch (computerChoice) {
     case options[0]:
-      console.log(draw);
+      console.log(result, draw);
       return;
     case options[1]:
-      console.log(win);
+      console.log(result, win);
       return;
     case options[2]:
-      console.log(loose);
+      console.log(result, loose);
       return;
   }
 } else if (userInput === options[1]) {
   switch (computerChoice) {
     case options[0]:
-      console.log(loose);
+      console.log(result, loose);
       return;
     case options[1]:
-      console.log(draw);
+      console.log(result, draw);
       return;
     case options[2]:
-      console.log(win);
+      console.log(result, win);
       return;
   }
 } else if (userInput === options[2]) {
   switch (computerChoice) {
     case options[0]:
-      console.log(win);
+      console.log(result, win);
       return;
     case options[1]:
-      console.log(loose);
+      console.log(result, loose);
       return;
     case options[2]:
-      console.log(draw);
+      console.log(result, draw);
       return;
   }
 }
